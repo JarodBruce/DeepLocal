@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A07373B12F1DD52B00D3B3D3 /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = A07373B02F1DD52B00D3B3D3 /* MLXLLM */; };
+		A07373B32F1DD53200D3B3D3 /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = A07373B22F1DD53200D3B3D3 /* MLXLMCommon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A07373982F1DCA6600D3B3D3 /* DeepLocal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepLocal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07373B32F1DD53200D3B3D3 /* MLXLMCommon in Frameworks */,
+				A07373B12F1DD52B00D3B3D3 /* MLXLLM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				A073739A2F1DCA6600D3B3D3 /* DeepLocal */,
+				A07373AF2F1DD52B00D3B3D3 /* Frameworks */,
 				A07373992F1DCA6600D3B3D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +51,13 @@
 				A07373982F1DCA6600D3B3D3 /* DeepLocal.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A07373AF2F1DD52B00D3B3D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +80,8 @@
 			);
 			name = DeepLocal;
 			packageProductDependencies = (
+				A07373B02F1DD52B00D3B3D3 /* MLXLLM */,
+				A07373B22F1DD53200D3B3D3 /* MLXLMCommon */,
 			);
 			productName = DeepLocal;
 			productReference = A07373982F1DCA6600D3B3D3 /* DeepLocal.app */;
@@ -94,6 +111,9 @@
 			);
 			mainGroup = A073738F2F1DCA6600D3B3D3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A07373992F1DCA6600D3B3D3 /* Products */;
 			projectDirPath = "";
@@ -332,6 +352,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift-lm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.29.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A07373B02F1DD52B00D3B3D3 /* MLXLLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLLM;
+		};
+		A07373B22F1DD53200D3B3D3 /* MLXLMCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLMCommon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A07373902F1DCA6600D3B3D3 /* Project object */;
 }
