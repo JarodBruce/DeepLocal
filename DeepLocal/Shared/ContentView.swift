@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Bindable var mlxService: MLXService
     @State private var sourceText: String = ""
-    @State private var mlxService = MLXService()
     @State private var errorMessage: String?
 
     var body: some View {
@@ -82,9 +82,11 @@ struct ContentView: View {
                         VStack(alignment: .leading) {
                             if mlxService.outputText.isEmpty {
                                 Text("翻訳結果がここに表示されます")
+                                    .font(.system(size: 18))
                                     .foregroundColor(.secondary)
                             } else {
                                 Text(mlxService.outputText)
+                                    .font(.system(size: 18))
                                     .textSelection(.enabled)
                             }
                         }
@@ -97,6 +99,11 @@ struct ContentView: View {
                 .frame(maxHeight: .infinity)
             }
             .padding()
+            .onReceive(NotificationCenter.default.publisher(for: .doubleCopyDetected)) { notification in
+                if let text = notification.object as? String {
+                    sourceText = text
+                }
+            }
             .task {
                 do {
                     try await mlxService.loadModel()
@@ -117,7 +124,7 @@ struct ContentView: View {
     private func startTranslation() {
         Task {
             do {
-                try await mlxService.translate(text: sourceText)
+                _ = try await mlxService.translate(text: sourceText)
             } catch {
                 errorMessage = "翻訳中にエラーが発生しました: \(error.localizedDescription)"
             }
@@ -142,5 +149,5 @@ extension View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(mlxService: MLXService.shared)
 }

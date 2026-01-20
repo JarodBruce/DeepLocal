@@ -51,4 +51,5 @@ class ClipboardMonitor: ObservableObject {
 
 extension Notification.Name {
     static let doubleCopyDetected = Notification.Name("doubleCopyDetected")
+    static let requestOpenWindow = Notification.Name("requestOpenWindow")
 }
