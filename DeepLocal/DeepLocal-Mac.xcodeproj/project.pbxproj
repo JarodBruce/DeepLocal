@@ -6,80 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		A07373B12F1DD52B00D3B3D3 /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = A07373B02F1DD52B00D3B3D3 /* MLXLLM */; };
-		A07373B32F1DD53200D3B3D3 /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = A07373B22F1DD53200D3B3D3 /* MLXLMCommon */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		A0248F7C2F1F14B20061603B /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
-		A0248FA02F1F44E20061603B /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
-		A07373982F1DCA6600D3B3D3 /* DeepLocal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepLocal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A07373D82F1E04F900D3B3D3 /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
+		A07373C32F1E047B00D3B3D3 /* DeepLocal-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DeepLocal-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A073739A2F1DCA6600D3B3D3 /* DeepLocal */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DeepLocal;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		A07373952F1DCA6600D3B3D3 /* Frameworks */ = {
+		A07373C02F1E047B00D3B3D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A07373B32F1DD53200D3B3D3 /* MLXLMCommon in Frameworks */,
-				A07373B12F1DD52B00D3B3D3 /* MLXLLM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0248F7F2F1F14B20061603B /* Products */ = {
+		A07373BA2F1E047B00D3B3D3 = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A0248FA12F1F44E20061603B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A073738F2F1DCA6600D3B3D3 = {
-			isa = PBXGroup;
-			children = (
-				A073739A2F1DCA6600D3B3D3 /* DeepLocal */,
-				A07373AF2F1DD52B00D3B3D3 /* Frameworks */,
-				A07373992F1DCA6600D3B3D3 /* Products */,
+				A07373C42F1E047B00D3B3D3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A07373992F1DCA6600D3B3D3 /* Products */ = {
+		A07373C42F1E047B00D3B3D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A07373982F1DCA6600D3B3D3 /* DeepLocal.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A07373AF2F1DD52B00D3B3D3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A07373D92F1E04F900D3B3D3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
+				A07373C32F1E047B00D3B3D3 /* DeepLocal-Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,83 +39,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A07373972F1DCA6600D3B3D3 /* DeepLocal */ = {
+		A07373C22F1E047B00D3B3D3 /* DeepLocal-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A07373A32F1DCA6600D3B3D3 /* Build configuration list for PBXNativeTarget "DeepLocal" */;
+			buildConfigurationList = A07373CE2F1E047C00D3B3D3 /* Build configuration list for PBXNativeTarget "DeepLocal-Mac" */;
 			buildPhases = (
-				A07373942F1DCA6600D3B3D3 /* Sources */,
-				A07373952F1DCA6600D3B3D3 /* Frameworks */,
-				A07373962F1DCA6600D3B3D3 /* Resources */,
+				A07373BF2F1E047B00D3B3D3 /* Sources */,
+				A07373C02F1E047B00D3B3D3 /* Frameworks */,
+				A07373C12F1E047B00D3B3D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				A073739A2F1DCA6600D3B3D3 /* DeepLocal */,
-			);
-			name = DeepLocal;
+			name = "DeepLocal-Mac";
 			packageProductDependencies = (
-				A07373B02F1DD52B00D3B3D3 /* MLXLLM */,
-				A07373B22F1DD53200D3B3D3 /* MLXLMCommon */,
 			);
-			productName = DeepLocal;
-			productReference = A07373982F1DCA6600D3B3D3 /* DeepLocal.app */;
+			productName = "DeepLocal-Mac";
+			productReference = A07373C32F1E047B00D3B3D3 /* DeepLocal-Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A07373902F1DCA6600D3B3D3 /* Project object */ = {
+		A07373BB2F1E047B00D3B3D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					A07373972F1DCA6600D3B3D3 = {
+					A07373C22F1E047B00D3B3D3 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = A07373932F1DCA6600D3B3D3 /* Build configuration list for PBXProject "DeepLocal" */;
+			buildConfigurationList = A07373BE2F1E047B00D3B3D3 /* Build configuration list for PBXProject "DeepLocal-Mac" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A073738F2F1DCA6600D3B3D3;
+			mainGroup = A07373BA2F1E047B00D3B3D3;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */,
-			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A07373992F1DCA6600D3B3D3 /* Products */;
+			productRefGroup = A07373C42F1E047B00D3B3D3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A07373D92F1E04F900D3B3D3 /* Products */;
-					ProjectRef = A07373D82F1E04F900D3B3D3 /* DeepLocal-Mac.xcodeproj */;
-				},
-				{
-					ProductGroup = A0248F7F2F1F14B20061603B /* Products */;
-					ProjectRef = A0248F7C2F1F14B20061603B /* DeepLocal-Mac.xcodeproj */;
-				},
-				{
-					ProductGroup = A0248FA12F1F44E20061603B /* Products */;
-					ProjectRef = A0248FA02F1F44E20061603B /* DeepLocal-Mac.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				A07373972F1DCA6600D3B3D3 /* DeepLocal */,
+				A07373C22F1E047B00D3B3D3 /* DeepLocal-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A07373962F1DCA6600D3B3D3 /* Resources */ = {
+		A07373C12F1E047B00D3B3D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,7 +103,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A07373942F1DCA6600D3B3D3 /* Sources */ = {
+		A07373BF2F1E047B00D3B3D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,7 +113,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A07373A12F1DCA6600D3B3D3 /* Debug */ = {
+		A07373CC2F1E047C00D3B3D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -236,19 +166,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		A07373A22F1DCA6600D3B3D3 /* Release */ = {
+		A07373CD2F1E047C00D3B3D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,127 +224,101 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A07373A42F1DCA6600D3B3D3 /* Debug */ = {
+		A07373CF2F1E047C00D3B3D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B8R5C539Q;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DeepLocal;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DeepLocal-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
-		A07373A52F1DCA6600D3B3D3 /* Release */ = {
+		A07373D02F1E047C00D3B3D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B8R5C539Q;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DeepLocal;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DeepLocal-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A07373932F1DCA6600D3B3D3 /* Build configuration list for PBXProject "DeepLocal" */ = {
+		A07373BE2F1E047B00D3B3D3 /* Build configuration list for PBXProject "DeepLocal-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A07373A12F1DCA6600D3B3D3 /* Debug */,
-				A07373A22F1DCA6600D3B3D3 /* Release */,
+				A07373CC2F1E047C00D3B3D3 /* Debug */,
+				A07373CD2F1E047C00D3B3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A07373A32F1DCA6600D3B3D3 /* Build configuration list for PBXNativeTarget "DeepLocal" */ = {
+		A07373CE2F1E047C00D3B3D3 /* Build configuration list for PBXNativeTarget "DeepLocal-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A07373A42F1DCA6600D3B3D3 /* Debug */,
-				A07373A52F1DCA6600D3B3D3 /* Release */,
+				A07373CF2F1E047C00D3B3D3 /* Debug */,
+				A07373D02F1E047C00D3B3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ml-explore/mlx-swift-lm";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.29.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A07373B02F1DD52B00D3B3D3 /* MLXLLM */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
-			productName = MLXLLM;
-		};
-		A07373B22F1DD53200D3B3D3 /* MLXLMCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07373AE2F1DD50A00D3B3D3 /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
-			productName = MLXLMCommon;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = A07373902F1DCA6600D3B3D3 /* Project object */;
+	rootObject = A07373BB2F1E047B00D3B3D3 /* Project object */;
 }

@@ -19,6 +19,22 @@ DeepLocalは、LiquidAIのApolloにインスパイアされた、LLM（Large Lan
 - **[LiquidAI/LFM2-350M-ENJP-MT](https://huggingface.co/LiquidAI/LFM2-350M-ENJP-MT)**
   - 日本語と英語の翻訳に特化し、軽量（350Mパラメータ）ながら非常に高い精度を誇ります。
 
+## プロジェクト構成
+
+このプロジェクトは、iOSとmacOSの両方をサポートするマルチプラットフォーム構成になっています。
+
+```
+DeepLocal/
+├── Shared/          # iOSとmacOSで共有されるコード (共通のUI、ロジック、モデル)
+│   ├── DeepLocalApp.swift
+│   ├── ContentView.swift
+│   ├── MLXService.swift
+│   └── Assets.xcassets
+├── macOS/           # macOS専用のコードとリソース
+│   └── ClipboardMonitor.swift
+└── iOS/             # iOS専用のコードとリソース
+```
+
 ## セットアップ（開発者向け）
 
 1. このリポジトリをクローンします。

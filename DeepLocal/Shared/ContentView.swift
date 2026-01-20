@@ -64,7 +64,13 @@ struct ContentView: View {
                 VStack(alignment: .trailing, spacing: 8) {
                     if !mlxService.outputText.isEmpty {
                         Button(action: {
+                            #if os(iOS)
                             UIPasteboard.general.string = mlxService.outputText
+                            #elseif os(macOS)
+                            let pasteboard = NSPasteboard.general
+                            pasteboard.clearContents()
+                            pasteboard.setString(mlxService.outputText, forType: .string)
+                            #endif
                         }) {
                             Label("コピー", systemImage: "doc.on.doc")
                                 .font(.caption)
@@ -105,7 +111,6 @@ struct ContentView: View {
                     Text(errorMessage)
                 }
             }
-            .navigationTitle("DeepLocal")
         }
     }
 

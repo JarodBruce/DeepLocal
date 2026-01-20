@@ -38,8 +38,8 @@ class MLXService {
     func loadModel() async throws {
         guard !isModelLoaded else { return }
 
-        // GPUメモリ制限の設定 (20MB)
-        MLX.GPU.set(cacheLimit: 20 * 1024 * 1024)
+        // GPUメモリ制限の設定 (2MB)
+        MLX.GPU.set(cacheLimit: 2 * 1024 * 1024)
 
         let configuration = ModelConfiguration(id: selectedModelId)
         
