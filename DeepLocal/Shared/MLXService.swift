@@ -38,8 +38,8 @@ class MLXService {
     func loadModel() async throws {
         guard !isModelLoaded else { return }
 
-        // GPUメモリ制限の設定 (2MB)
-        MLX.GPU.set(cacheLimit: 2 * 1024 * 1024)
+        // GPUメモリ制限の設定 (1GB / 1024MB に変更してパフォーマンスを最適化)
+        MLX.GPU.set(cacheLimit: 1024 * 1024 * 1024)
 
         let configuration = ModelConfiguration(id: selectedModelId)
         
@@ -76,14 +76,26 @@ class MLXService {
         
         var fullOutput = ""
 
-        // 入力の準備
-        let messages = [Chat.Message(role: .user, content: text)]
+        // 入力の判定とシステムプロンプトの追加 (READMEの要件)
+        // LFM2モデルの場合、システムプロンプトが必須
+        var messages: [Chat.Message] = []
+        if selectedModelId.contains("LFM2") {
+            let systemPrompt = detectLanguage(text: text)
+            messages.append(Chat.Message(role: .system, content: systemPrompt))
+        }
+        messages.append(Chat.Message(role: .user, content: text))
+        
         let userInput = UserInput(chat: messages)
 
         // 推論の実行 (actorのperformを使用)
         let stream: AsyncStream<Generation> = try await container.perform { context in
             let lmInput = try await context.processor.prepare(input: userInput)
-            let parameters = GenerateParameters(temperature: 0.7)
+            // README推奨パラメータ
+            let parameters = GenerateParameters(
+                temperature: 0.5,
+                topP: 1.0,
+                repetitionPenalty: 1.05
+            )
             return try MLXLMCommon.generate(input: lmInput, parameters: parameters, context: context)
         }
         
@@ -106,5 +118,11 @@ class MLXService {
         }
         
         return fullOutput
+    }
+
+    private func detectLanguage(text: String) -> String {
+        // 簡単な判定: ひらがな、カタカナ、漢字が含まれていれば日本語とみなして英語へ翻訳
+        let range = text.range(of: "\\p{Hiragana}|\\p{Katakana}|\\p{Han}", options: .regularExpression)
+        return range != nil ? "Translate to English." : "Translate to Japanese."
     }
 }

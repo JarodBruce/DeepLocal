@@ -18,6 +18,8 @@ DeepLocalは、LiquidAIのApolloにインスパイアされた、LLM（Large Lan
 初期状態では以下のモデルを推奨・使用しています：
 - **[LiquidAI/LFM2-350M-ENJP-MT](https://huggingface.co/LiquidAI/LFM2-350M-ENJP-MT)**
   - 日本語と英語の翻訳に特化し、軽量（350Mパラメータ）ながら非常に高い精度を誇ります。
+  - 推奨パラメータ（適用済み）: `temperature: 0.5`, `top_p: 1.0`, `repetition_penalty: 1.05`
+  - 必須システムプロンプト: `"Translate to Japanese."` または `"Translate to English."`（自動的に判定・適用されます）
 
 ## プロジェクト構成
 
