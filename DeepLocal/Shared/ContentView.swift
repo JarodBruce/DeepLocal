@@ -11,10 +11,42 @@ struct ContentView: View {
     @Bindable var mlxService: MLXService
     @State private var sourceText: String = ""
     @State private var errorMessage: String?
+    @State private var showModelSelection = false
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
+                // 現在使用中のモデル表示ヘッダー
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("現在の翻訳エンジン")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
+                            .textCase(.uppercase)
+                        
+                        HStack(spacing: 6) {
+                            Image(systemName: "cpu")
+                                .foregroundColor(.accentColor)
+                            Text(MLXService.availableModels.first(where: { $0.id == mlxService.selectedModelId })?.name ?? "不明")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: { showModelSelection = true }) {
+                        Text("変更")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.accentColor)
+                    .disabled(mlxService.isGenerating)
+                }
+                .padding(10)
+                .background(Color.accentColor.opacity(0.05))
+                .cornerRadius(10)
+
                 // ソーステキスト入力エリア
                 TextEditor(text: $sourceText)
                     .frame(height: 150)
@@ -99,6 +131,7 @@ struct ContentView: View {
                 .frame(maxHeight: .infinity)
             }
             .padding()
+            .navigationTitle("DeepLocal")
             .onReceive(NotificationCenter.default.publisher(for: .doubleCopyDetected)) { notification in
                 if let text = notification.object as? String {
                     sourceText = text
@@ -117,6 +150,9 @@ struct ContentView: View {
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                 }
+            }
+            .sheet(isPresented: $showModelSelection) {
+                ModelSelectionView(mlxService: mlxService)
             }
         }
     }
@@ -145,6 +181,60 @@ extension View {
             }
             self
         }
+    }
+}
+
+struct ModelSelectionView: View {
+    @Bindable var mlxService: MLXService
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(MLXService.availableModels) { model in
+                    Button(action: {
+                        mlxService.selectedModelId = model.id
+                        dismiss()
+                        Task {
+                            try? await mlxService.loadModel()
+                        }
+                    }) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(model.name)
+                                    .font(.headline)
+                                    .foregroundColor(.primary)
+                                Text(model.description)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            if mlxService.selectedModelId == model.id {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.blue)
+                                    .font(.title3)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .navigationTitle("翻訳モデルの選択")
+            #if os(iOS)
+            .navigationBarTitleDisplayMode(.inline)
+            #endif
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("完了") { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.medium, .large])
+        #if os(macOS)
+        .frame(width: 450, height: 500)
+        #endif
     }
 }
 
