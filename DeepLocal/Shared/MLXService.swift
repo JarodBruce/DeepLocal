@@ -53,8 +53,8 @@ class MLXService {
     func loadModel() async throws {
         guard !isModelLoaded else { return }
 
-        // GPUメモリ制限の設定 (1GB に変更してパフォーマンスを最適化)
-        MLX.GPU.set(cacheLimit: 1024 * 1024 * 1024)
+        // GPUメモリ制限の設定 (2MB)
+        MLX.GPU.set(cacheLimit: 2 * 1024 * 1024)
 
         let configuration = ModelConfiguration(id: selectedModelId)
         
@@ -91,33 +91,14 @@ class MLXService {
         
         var fullOutput = ""
 
-        // 入力の判定とシステムプロンプトの追加
-        let translationInstruction = detectLanguage(text: text)
-        var systemPrompt = translationInstruction
-        
-        // LFM2以外の汎用Instructモデル（Llama, Qwen, SmolLMなど）の場合
-        // 翻訳結果のみを出力するように指示を強化する
-        // 英語 -> 日本語（Translate to Japanese.）の際に特に重要
-        if !selectedModelId.contains("LFM2") {
-            systemPrompt += " Output ONLY the translated text. Do not include any explanations, introductory remarks, or conversational filler. Your response should contain only the direct translation."
-        }
-        
-        var messages: [Chat.Message] = [
-            Chat.Message(role: .system, content: systemPrompt),
-            Chat.Message(role: .user, content: text)
-        ]
-        
+        // 入力の準備
+        let messages = [Chat.Message(role: .user, content: text)]
         let userInput = UserInput(chat: messages)
 
         // 推論の実行 (actorのperformを使用)
         let stream: AsyncStream<Generation> = try await container.perform { context in
             let lmInput = try await context.processor.prepare(input: userInput)
-            // 推論パラメータ
-            let parameters = GenerateParameters(
-                temperature: 0.5,
-                topP: 1.0,
-                repetitionPenalty: 1.05
-            )
+            let parameters = GenerateParameters(temperature: 0.7)
             return try MLXLMCommon.generate(input: lmInput, parameters: parameters, context: context)
         }
         
