@@ -67,7 +67,7 @@ class MLXService {
         guard let container = modelContainer else {
             // 自動的にロードを試みる
              try await loadModel()
-             guard let container = modelContainer else {
+            guard modelContainer != nil else {
                  throw NSError(domain: "MLXService", code: 1, userInfo: [NSLocalizedDescriptionKey: "Model not loaded"])
              }
              return try await translate(text: text)
