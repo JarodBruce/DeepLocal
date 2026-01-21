@@ -14,6 +14,7 @@
 /* Begin PBXFileReference section */
 		A0248F7C2F1F14B20061603B /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
 		A0248FA02F1F44E20061603B /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
+		A05319EF2F20825900455150 /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
 		A07373982F1DCA6600D3B3D3 /* DeepLocal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepLocal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07373D82F1E04F900D3B3D3 /* DeepLocal-Mac.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "DeepLocal-Mac.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +48,13 @@
 			sourceTree = "<group>";
 		};
 		A0248FA12F1F44E20061603B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A05319F02F20825900455150 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -153,6 +161,10 @@
 				{
 					ProductGroup = A0248FA12F1F44E20061603B /* Products */;
 					ProjectRef = A0248FA02F1F44E20061603B /* DeepLocal-Mac.xcodeproj */;
+				},
+				{
+					ProductGroup = A05319F02F20825900455150 /* Products */;
+					ProjectRef = A05319EF2F20825900455150 /* DeepLocal-Mac.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -321,10 +333,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepLocal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,10 +367,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeepLocal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
